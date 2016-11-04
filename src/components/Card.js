@@ -11,13 +11,13 @@ class Card extends Component {
     render() {
         let symbol;
         if (this.state.suit === "Spades") {
-            symbol = <span>&spades;</span>;
+            symbol = <span className="black-suit">&spades;</span>;
         } else if (this.state.suit === "Hearts") {
-            symbol = <span>&hearts;</span>;
+            symbol = <span className="red-suit">&hearts;</span>;
         } else if (this.state.suit === "Diamonds") {
-            symbol = <span>&diams;</span>;
+            symbol = <span className="red-suit">&diams;</span>;
         } else {
-            symbol = <span>&clubs;</span>;
+            symbol = <span className="black-suit">&clubs;</span>;
         }
         return (
             <div className="Card">
