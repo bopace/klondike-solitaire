@@ -16,9 +16,19 @@ class Deck extends Component {
                 );
             }
         }
+        this.shuffleDeck(cardsInDeck);
         this.state = {
             cardsInDeck: cardsInDeck,
             deckSize: 0,
+        }
+    }
+    shuffleDeck(deck) {
+        let j, x, i;
+        for (i = deck.length; i; i--) {
+            j = Math.floor(Math.random() * i);
+            x = deck[i - 1];
+            deck[i - 1] = deck[j];
+            deck[j] = x;
         }
     }
     render() {
