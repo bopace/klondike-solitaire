@@ -7,3 +7,12 @@ body {
 .red-suit {
   color: red;
 }
+
+.Foundation, .Tableau {
+  display: inline-block;
+  border: solid 1px gray;
+  height: 160px;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+}

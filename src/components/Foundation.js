@@ -11,10 +11,17 @@ class Foundation extends Component {
             cards: cards
         };
     }
+    getTopCard() {
+        if (this.state.cards.length === 0) {
+            return "Empty";
+        } else {
+            return this.state.cards.slice(-1)[0];
+        }
+    }
     render() {
         return (
             <div className="Foundation">
-                
+                {this.getTopCard()}
             </div>
         );
     }

@@ -32,7 +32,6 @@ class Deck extends Component {
         }
     }
     render() {
-        console.log(this.state.cardsInDeck);
         return (
             <div>
                 {this.state.cardsInDeck}

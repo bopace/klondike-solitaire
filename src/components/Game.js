@@ -33,6 +33,8 @@ class Game extends Component {
     render() {
         return (
             <div className="Game">
+                <h1>Deck</h1>
+                {this.state.remainingDeck}
                 <h1>Foundations</h1>
                 {this.state.foundations}
                 <h1>Tableaus</h1>
