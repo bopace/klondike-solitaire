@@ -17,7 +17,7 @@ class Game extends Component {
         let tableaus = [];
         for (let i = 0; i < 7; i++) {
             tableaus.push(
-                <Tableau />
+                <Tableau cards={[]} />
             );
         }
 

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Card from './Card';
 
 class Tableau extends Component {
     constructor(props) {
@@ -8,10 +7,17 @@ class Tableau extends Component {
             cards: this.props.cards,
         };
     }
+    getCards() {
+        if (this.state.cards.length === 0) {
+            return "Empty";
+        } else {
+            return this.state.cards;
+        }
+    }
     render() {
         return (
             <div className="Tableau">
-                {this.state.cards}
+                {this.getCards()}
             </div>
         );
     }
