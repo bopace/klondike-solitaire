@@ -8,7 +8,7 @@ body {
   color: red;
 }
 
-.Foundation, .Tableau {
+.Foundation, .Tableau, .RemainingDeck, .FlippedCards {
   display: inline-block;
   border: solid 1px gray;
   height: 160px;

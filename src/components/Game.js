@@ -6,8 +6,6 @@ import Tableau from './Tableau';
 class Game extends Component {
     constructor() {
         super();
-        let remainingDeck = [];
-        let flippedRemainingDeck = [];
 
         let foundations = [];
         for (let i = 0; i < 4; i++) {
@@ -24,8 +22,6 @@ class Game extends Component {
         }
 
         this.state = {
-            remainingDeck: remainingDeck,
-            flippedRemainingDeck: flippedRemainingDeck,
             foundations: foundations,
             tableaus: tableaus
         };
@@ -34,7 +30,7 @@ class Game extends Component {
         return (
             <div className="Game">
                 <h1>Deck</h1>
-                {this.state.remainingDeck}
+                <Deck />
                 <h1>Foundations</h1>
                 {this.state.foundations}
                 <h1>Tableaus</h1>

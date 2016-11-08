@@ -9,6 +9,7 @@ class Deck extends Component {
     constructor() {
         super();
         let cardsInDeck = [];
+        let flippedCards = [];
         for (let i = 0; i < 4; i++) {
             for (let j = 1; j <= 13; j++) {
                 cardsInDeck.push(
@@ -19,7 +20,7 @@ class Deck extends Component {
         this.shuffleDeck(cardsInDeck);
         this.state = {
             cardsInDeck: cardsInDeck,
-            deckSize: 0,
+            flippedCards: flippedCards,
         }
     }
     shuffleDeck(deck) {
@@ -31,10 +32,22 @@ class Deck extends Component {
             deck[j] = x;
         }
     }
+    getTopFlippedCard() {
+        if (this.state.flippedCards.length === 0) {
+            return "Empty";
+        } else {
+            return this.state.flippedCards.slice(-1)[0];
+        }
+    }
     render() {
         return (
-            <div>
-                {this.state.cardsInDeck}
+            <div className="Deck">
+                <div className="RemainingDeck">
+                    Hidden
+                </div>
+                <div className="FlippedCards">
+                    {this.getTopFlippedCard()}
+                </div>
             </div>
         );
     }
