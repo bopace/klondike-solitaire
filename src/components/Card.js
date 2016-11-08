@@ -6,7 +6,8 @@ class Card extends Component {
         this.state = {
             suit: this.props.suit,
             value: this.props.value,
-        }
+            status: this.props.status,
+        };
     }
     render() {
         let symbol;
@@ -19,11 +20,19 @@ class Card extends Component {
         } else {
             symbol = <span className="black-suit">&clubs;</span>;
         }
-        return (
-            <div className="Card">
-                {symbol} {this.state.value}
-            </div>
-        );
+        if (status === "hidden") {
+            return (
+                <div className="Card">
+                    Hidden
+                </div>
+            );
+        } else {
+            return (
+                <div className="Card">
+                    {symbol} {this.state.value}
+                </div>
+            );
+        }
     }
 }
 

@@ -13,7 +13,7 @@ class Deck extends Component {
         for (let i = 0; i < 4; i++) {
             for (let j = 1; j <= 13; j++) {
                 cardsInDeck.push(
-                    <Card suit={suitDict[i]} value={valueDict[j]} />
+                    <Card suit={suitDict[i]} value={valueDict[j]} status="hidden" />
                 );
             }
         }
@@ -32,6 +32,13 @@ class Deck extends Component {
             deck[j] = x;
         }
     }
+    canFlipFromRemaining() {
+        if (this.state.cardsInDeck.length === 0) {
+            return "Empty";
+        } else {
+            return "Hidden";
+        }
+    }
     getTopFlippedCard() {
         if (this.state.flippedCards.length === 0) {
             return "Empty";
@@ -43,7 +50,7 @@ class Deck extends Component {
         return (
             <div className="Deck">
                 <div className="RemainingDeck">
-                    Hidden
+                    {this.canFlipFromRemaining()}
                 </div>
                 <div className="FlippedCards">
                     {this.getTopFlippedCard()}
