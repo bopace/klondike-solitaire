@@ -10,27 +10,35 @@ class Game extends Component {
         let foundations = [];
         for (let i = 0; i < 4; i++) {
             foundations.push(
-                <Foundation />
+                <Foundation  cardsToTransfer={this.state.cardsToTransfer} updateCardsToTransfer={this.updateCardsToTransfer} />
             );
         }
 
         let tableaus = [];
         for (let i = 0; i < 7; i++) {
             tableaus.push(
-                <Tableau cards={[]} />
+                <Tableau cards={[]}  cardsToTransfer={this.state.cardsToTransfer} updateCardsToTransfer={this.updateCardsToTransfer} />
             );
         }
 
+        let cardsToTransfer = [];
+
         this.state = {
             foundations: foundations,
-            tableaus: tableaus
+            tableaus: tableaus,
+            cardsToTransfer: cardsToTransfer,
         };
+    }
+    updateCardsToTransfer(transferedCards) {
+        this.setState({
+            cardsToTransfer: transferedCards
+        });
     }
     render() {
         return (
             <div className="Game">
                 <h1>Deck</h1>
-                <Deck />
+                <Deck cardsToTransfer={this.state.cardsToTransfer} updateCardsToTransfer={this.updateCardsToTransfer} />
                 <h1>Foundations</h1>
                 {this.state.foundations}
                 <h1>Tableaus</h1>
